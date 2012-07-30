@@ -39,13 +39,17 @@
     return $this.each(function () {
       var rand = Math.random() + "",
           a = rand * 10000000000000;
-          
-      $elem.attr('target', '_blank').on({
+
+      if (self.options.return_false) {
+        $elem.attr('target', '_blank');
+      };
+
+      $elem.on({
         click: function() {
           $('body').append('<iframe src="https://ad.doubleclick.net/activity;src=' + self.options.src + ';type=' + self.options.type + ';cat=' + self.options.cat + ';ord=' + a + '?" width="1" height="1"></iframe>');
-          return self.options.return_false;
+          return (self.options.return_false) ? false : true ;
         }
-      })
+      });
     });
   };
 
