@@ -33,16 +33,16 @@
     };
 
     var $this = $(this),
-        self = this;
+        self = this,
+        $elem = $(this.element);
 
     return $this.each(function () {
-
       var rand = Math.random() + "",
           a = rand * 10000000000000;
-
-      $(this.element).on({
+          
+      $elem.attr('target', '_blank').on({
         click: function() {
-          $('body').append('<img src="https://ad.doubleclick.net/activity;src=' + self.options.src + ';type=' + self.options.type + ';cat=' + self.options.cat + ';ord=' + a + '?" width="1" height="1" alt=""/>');
+          $('body').append('<iframe src="https://ad.doubleclick.net/activity;src=' + self.options.src + ';type=' + self.options.type + ';cat=' + self.options.cat + ';ord=' + a + '?" width="1" height="1"></iframe>');
           return self.options.return_false;
         }
       })
