@@ -46,7 +46,7 @@
 
       $elem.on({
         click: function() {
-          $('body').append('<iframe src="https://ad.doubleclick.net/activity;src=' + self.options.src + ';type=' + self.options.type + ';cat=' + self.options.cat + ';ord=' + a + '?" width="1" height="1"></iframe>');
+          $('body').append('<iframe src="https://ad.doubleclick.net/activity;src=' + self.options.src + ';type=' + self.options.type + ';cat=' + self.options.cat + ';ord=' + a + '?" width="1" height="1" frameborder="0"></iframe>');
           return (self.options.return_false) ? false : true ;
         }
       });
@@ -63,5 +63,4 @@
       }
     });
   }
-
 }(jQuery, window));
